@@ -62,11 +62,11 @@ const themes = [
   // Script to handle theme switching and persistence
   const THEME_STORAGE_KEY = 'theme';
 
-  function applyTheme(themeName) {
+  function applyTheme(themeName: string) {
     document.documentElement.setAttribute('data-theme', themeName);
   }
 
-  function saveTheme(themeName) {
+  function saveTheme(themeName: string) {
     localStorage.setItem(THEME_STORAGE_KEY, themeName);
   }
 

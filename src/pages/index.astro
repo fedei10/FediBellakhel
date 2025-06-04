@@ -372,19 +372,19 @@ export const certificates = [
     aria-label={icon.label}
   >
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill={icon.fill || "none"}
-      stroke={icon.fill ? "none" : "currentColor"}
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path d={icon.svgPath}></path>
-      {icon.polyline && <polyline points={icon.polyline}></polyline>}
-    </svg>
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d={icon.svgPath}></path>
+  {icon.polyline && <polyline points={icon.polyline}></polyline>}
+</svg>
   </a>
 ))}
           </div>
