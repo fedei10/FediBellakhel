@@ -17,8 +17,8 @@
     "shiki": "^3.5.0",
     "tailwindcss": "^4.1.8"
   },
-  "engines":{
-    "node": "v22.13.0"
-  }
+  "engines": {
+  "node": "^22.0.0"
+}
 
 }
