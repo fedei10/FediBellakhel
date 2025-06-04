@@ -1,0 +1,63 @@
+---
+// src/pages/widgets/footer.astro
+---
+<footer 
+  id="commandFooter"
+  class="fixed bottom-0 left-0 right-0 z-40 bg-neutral text-neutral-content p-3 text-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_-2px_4px_-2px_rgba(0,0,0,0.1)] transform translate-y-full transition-transform duration-300 ease-in-out"
+>
+  <p class="text-sm">
+    Press <kbd class="kbd kbd-xs sm:kbd-sm">Ctrl</kbd> + <kbd class="kbd kbd-xs sm:kbd-sm">K</kbd> to open command palette
+  </p>
+  <p class="text-xs mt-1 opacity-60">
+    © {new Date().getFullYear()} Fedi Bellakhel. All rights reserved.
+  </p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const commandFooter = document.getElementById('commandFooter');
+    if (!commandFooter) return;
+
+    let isFooterVisible = false;
+
+    const showFooter = () => {
+      if (!isFooterVisible) {
+        commandFooter.classList.remove('translate-y-full');
+        isFooterVisible = true;
+      }
+    };
+
+    const hideFooter = () => {
+      if (isFooterVisible) {
+        commandFooter.classList.add('translate-y-full');
+        isFooterVisible = false;
+      }
+    };
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > 50) {
+        showFooter();
+      } else if (currentScrollY <= 10 && document.body.scrollHeight > window.innerHeight + (commandFooter.offsetHeight > 0 ? commandFooter.offsetHeight : 60) + 50 ) { 
+        // Hide only if scrolled to top AND there's enough content to scroll beyond the footer + threshold
+        hideFooter();
+      }
+    };
+
+    // Initial check: Show if content is too short to scroll meaningfully, or if already scrolled.
+    // The timeout gives a moment for layout to settle.
+    setTimeout(() => {
+      if (document.body.scrollHeight <= window.innerHeight + (commandFooter.offsetHeight > 0 ? commandFooter.offsetHeight : 60) || window.scrollY > 10) {
+        showFooter();
+      } else {
+        // Ensure it's hidden if no scroll and content is long
+        hideFooter();
+      }
+      // Attach scroll listener after initial check
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      // Call handler once in case page is loaded scrolled down
+      handleScroll();
+    }, 100);
+
+  });
+</script>

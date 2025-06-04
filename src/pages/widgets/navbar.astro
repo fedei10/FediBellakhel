@@ -1,0 +1,30 @@
+---
+// src/pages/widgets/navbar.astro
+---
+<div id="navbar" class="navbar fixed top-0 w-full z-[51] bg-base-100/80 backdrop-blur-md transition-all duration-300 border-b border-base-content/10 shadow-sm">
+  <div class="navbar-start">
+    <a href="/" class="btn btn-ghost text-xl normal-case">Fedi Bellakhel</a>
+  </div>
+  <div class="navbar-center">
+    {/* You can add more navigation links here if needed */}
+  </div>
+  <div class="navbar-end">
+    <a href="/blog" class="btn btn-ghost btn-sm mr-2"> {/* Changed to btn-ghost and btn-sm for consistency */}
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4">
+        <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0L8 18V4h12v16H4Z"></path>
+        <path d="M4 22V10a2 2 0 0 1 2-2h2"></path>
+        <path d="M12 16h4"></path><path d="M12 12h4"></path><path d="M12 8h4"></path>
+      </svg>
+      <span class="hidden sm:inline ml-1">Blog</span> {/* Hide text on very small screens */}
+    </a>
+
+    {/* Theme Toggle Button for Drawer */}
+    <label for="theme-drawer-checkbox" class="btn btn-ghost btn-circle drawer-button" aria-label="Change theme">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+        <path d="M12 3a6 6 0 0 0 9 9a9 9 0 1 1-9-9Z"></path> {/* Palette/Contrast Icon */}
+        <path d="M20.34 10.22a2.5 2.5 0 0 0-2.55-4.06"></path>
+        <path d="M12 2v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="M20 12h2"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M12 20v2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="M4 12H2"></path><path d="m6.34 6.34-1.41-1.41"></path>
+      </svg>
+    </label>
+  </div>
+</div>
