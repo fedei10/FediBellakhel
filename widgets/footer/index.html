@@ -1,0 +1,5 @@
+<!DOCTYPE html><footer id="commandFooter" class="fixed bottom-0 left-0 right-0 z-40 bg-neutral text-neutral-content p-3 text-center shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_-2px_4px_-2px_rgba(0,0,0,0.1)] transform translate-y-full transition-transform duration-300 ease-in-out"> <p class="text-sm">
+Press <kbd class="kbd kbd-xs sm:kbd-sm">Ctrl</kbd> + <kbd class="kbd kbd-xs sm:kbd-sm">K</kbd> to open command palette
+</p> <p class="text-xs mt-1 opacity-60">
+© 2025 Fedi Bellakhel. All rights reserved.
+</p> </footer> <script type="module">document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("commandFooter");if(!e)return;let t=!1;const o=()=>{t||(e.classList.remove("translate-y-full"),t=!0)},s=()=>{t&&(e.classList.add("translate-y-full"),t=!1)},n=()=>{const i=window.scrollY;i>50?o():i<=10&&document.body.scrollHeight>window.innerHeight+(e.offsetHeight>0?e.offsetHeight:60)+50&&s()};setTimeout(()=>{document.body.scrollHeight<=window.innerHeight+(e.offsetHeight>0?e.offsetHeight:60)||window.scrollY>10?o():s(),window.addEventListener("scroll",n,{passive:!0}),n()},100)});</script>
